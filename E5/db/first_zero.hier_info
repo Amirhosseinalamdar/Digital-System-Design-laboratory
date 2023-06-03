@@ -1,0 +1,15 @@
+|first_zero
+in[0] => index.IN1
+in[0] => index.IN0
+in[0] => index.IN1
+in[1] => index.IN1
+in[1] => index.IN1
+in[1] => index.IN0
+in[2] => index.IN0
+in[2] => index.IN1
+in[3] => index.IN1
+index[0] <= index.DB_MAX_OUTPUT_PORT_TYPE
+index[1] <= index.DB_MAX_OUTPUT_PORT_TYPE
+index[2] <= index.DB_MAX_OUTPUT_PORT_TYPE
+
+

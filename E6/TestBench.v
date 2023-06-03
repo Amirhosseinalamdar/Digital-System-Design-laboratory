@@ -1,0 +1,44 @@
+module TestBench ();
+reg signed [7:0] sensor;
+reg clock = 0;
+reg reset = 0;
+wire [3:0] rps;
+wire heater;
+wire cooler;
+
+incubator incubator(sensor, clock, reset, cooler, heater, rps);
+initial
+begin
+
+clock = 0;
+sensor = 8'd20;
+
+#5 reset = 1;
+#5 reset = 0;
+
+#10 sensor = -8'd40;
+#10 sensor = 8'd20;
+#10 sensor = 8'd20;
+#10 sensor = 8'd8;
+#10 sensor = 8'd33;
+#10 sensor = -8'd5;
+#10 sensor = 8'd46;  
+#10 sensor = 8'd20;
+#10 sensor = 8'd0; 
+
+sensor = 8'd20;
+
+#5 reset = 1;
+#5 reset = 0;
+
+#10 sensor = 8'd40;
+#10 sensor = 8'd20;
+#10 sensor = 8'd20;
+#10 sensor = 8'd8;
+#10 sensor = 8'd33;
+#10 sensor = -8'd5;
+#10 sensor = 8'd46;    
+end
+always
+  #5 clock = ~clock;
+endmodule

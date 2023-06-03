@@ -1,0 +1,39 @@
+|final
+open <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+IN => inst4.IN0
+IN => up_down_counter:inst.up_down
+IN => inst8.IN0
+Q0 <= up_down_counter:inst.Q0
+clock => up_down_counter:inst.clock
+clock => inst4.CLK
+clear => inst6.IN0
+out => inst9.IN0
+close <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= up_down_counter:inst.Q2
+Q1 <= up_down_counter:inst.Q1
+Q3 <= up_down_counter:inst.Q3
+T => inst3.IN1
+enter => inst3.IN2
+
+
+|final|up_down_counter:inst
+Q0 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst18.CLK
+clock => inst19.CLK
+clock => inst20.CLK
+clock => inst21.CLK
+clear => inst18.ACLR
+clear => inst19.ACLR
+clear => inst20.ACLR
+clear => inst21.ACLR
+enable => inst18.ENA
+enable => inst19.ENA
+enable => inst20.ENA
+enable => inst21.ENA
+Q1 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+up_down => inst11.IN0
+up_down => inst5.IN0
+Q2 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+
+

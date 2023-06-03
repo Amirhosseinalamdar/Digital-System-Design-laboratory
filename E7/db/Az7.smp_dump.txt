@@ -1,0 +1,15 @@
+
+State Machine - |UART|RX:rx|state
+Name state.S_STOP state.S_PARITY state.S_RECEIVE state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_RECEIVE 0 0 1 1 
+state.S_PARITY 0 1 0 1 
+state.S_STOP 1 0 0 1 
+
+State Machine - |UART|TX:tx|state
+Name state.S_PARITY state.S_SEND state.S_POST_START state.000 state.S_STOP 
+state.000 0 0 0 0 0 
+state.S_POST_START 0 0 1 1 0 
+state.S_SEND 0 1 0 1 0 
+state.S_PARITY 1 0 0 1 0 
+state.S_STOP 0 0 0 1 1 

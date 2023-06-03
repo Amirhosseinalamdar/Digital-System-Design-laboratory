@@ -1,0 +1,216 @@
+Version 9.0 Build 132 02/25/2009 SJ Web Edition
+11
+1000
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+myMain11
+# storage
+db|AZ1.(0).cnf
+db|AZ1.(0).cnf
+# case_insensitive
+# source_file
+11|myMain11.bdf
+bf8a4a91584b82f740f1cb424de03c26
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+4BitCMP
+# storage
+db|AZ1.(1).cnf
+db|AZ1.(1).cnf
+# case_insensitive
+# source_file
+11|4BitCMP.bdf
+716d72da389e20bd2ea6796f7cf39c57
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+2BitCMP
+# storage
+db|AZ1.(2).cnf
+db|AZ1.(2).cnf
+# case_insensitive
+# source_file
+11|2BitCMP.bdf
+363e9c8d7514039e6b2bc4f4f4216
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+1BitCMP
+# storage
+db|AZ1.(3).cnf
+db|AZ1.(3).cnf
+# case_insensitive
+# source_file
+11|1BitCMP.bdf
+526936202dc52a40e31f63f87f2aa868
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+2MUX1
+# storage
+db|AZ1.(4).cnf
+db|AZ1.(4).cnf
+# case_insensitive
+# source_file
+11|2MUX1.bdf
+46b1ae7fa266b58d8f7f83f1c90979f
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+4BitAdder
+# storage
+db|AZ1.(5).cnf
+db|AZ1.(5).cnf
+# case_insensitive
+# source_file
+4BitAdder.bdf
+8a1ff853d05d51485dc2a25f5f8e8c27
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+HA
+# storage
+db|AZ1.(7).cnf
+db|AZ1.(7).cnf
+# case_insensitive
+# source_file
+HA.bdf
+36368df91327e425ae1f9a4ec577849
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+HA:inst2
+HA:inst1
+}
+# macro_sequence
+
+# end
+# entity
+AZ1FINAL
+# storage
+db|AZ1.(8).cnf
+db|AZ1.(8).cnf
+# case_insensitive
+# source_file
+AZ1FINAL.bdf
+28a7f3709df8b4859ee3b54d5fc21c5
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+3_final
+# storage
+db|AZ1.(9).cnf
+db|AZ1.(9).cnf
+# case_insensitive
+# source_file
+3_final.bdf
+b899459d84ce527afb64f7b59e5b4a73
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+4BitRemainder
+# storage
+db|AZ1.(10).cnf
+db|AZ1.(10).cnf
+# case_insensitive
+# source_file
+4BitRemainder.bdf
+bb23db38067d2a641b036a16d41fdb
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+FA
+# storage
+db|AZ1.(6).cnf
+db|AZ1.(6).cnf
+# case_insensitive
+# source_file
+FA.bdf
+bc19153f7db097ef928e9022fcbd7284
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,182 @@
+|test_bench
+
+
+|test_bench|booth:mul
+A_in[0] => A_in[0].IN1
+A_in[1] => A_in[1].IN1
+A_in[2] => A_in[2].IN1
+A_in[3] => A_in[3].IN1
+B_in[0] => B_in[0].IN1
+B_in[1] => B_in[1].IN1
+B_in[2] => B_in[2].IN1
+B_in[3] => B_in[3].IN1
+rstN => rstN.IN2
+clk => clk.IN2
+res[0] <= datapath:DP.port8
+res[1] <= datapath:DP.port8
+res[2] <= datapath:DP.port8
+res[3] <= datapath:DP.port8
+res[4] <= datapath:DP.port8
+res[5] <= datapath:DP.port8
+res[6] <= datapath:DP.port8
+res[7] <= datapath:DP.port8
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_bench|booth:mul|control_unit:CU
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+rstN => first_clk.PRESET
+rstN => shifted[0].ACLR
+rstN => shifted[1].ACLR
+rstN => shifted[2].ACLR
+clk => first_clk.CLK
+clk => shifted[0].CLK
+clk => shifted[1].CLK
+clk => shifted[2].CLK
+A_shift_amount[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+A_shift_amount[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+A_shift_amount[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+B_shift_amount[0] <= B_shift_amount.DB_MAX_OUTPUT_PORT_TYPE
+B_shift_amount[1] <= B_shift_amount.DB_MAX_OUTPUT_PORT_TYPE
+B_shift_amount[2] <= <GND>
+op <= op.DB_MAX_OUTPUT_PORT_TYPE
+done <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_bench|booth:mul|control_unit:CU|first_one:FO
+in[0] => index.IN0
+in[0] => index.IN1
+in[1] => index.IN1
+in[1] => index.IN0
+in[2] => index.IN1
+in[3] => ~NO_FANOUT~
+index[0] <= index.DB_MAX_OUTPUT_PORT_TYPE
+index[1] <= index.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_bench|booth:mul|control_unit:CU|first_zero:FZ
+in[0] => index.IN1
+in[0] => index.IN0
+in[0] => index.IN1
+in[1] => index.IN1
+in[1] => index.IN1
+in[1] => index.IN0
+in[2] => index.IN0
+in[2] => index.IN1
+in[3] => index.IN1
+index[0] <= index.DB_MAX_OUTPUT_PORT_TYPE
+index[1] <= index.DB_MAX_OUTPUT_PORT_TYPE
+index[2] <= index.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_bench|booth:mul|datapath:DP
+A_in[0] => A[0].DATAIN
+A_in[1] => A[1].DATAIN
+A_in[2] => A[2].DATAIN
+A_in[3] => A[3].DATAIN
+A_in[3] => A[4].DATAIN
+A_in[3] => A[5].DATAIN
+A_in[3] => A[6].DATAIN
+A_in[3] => A[7].DATAIN
+B_in[0] => B[0]~reg0.ADATA
+B_in[1] => B[1]~reg0.ADATA
+B_in[2] => B[2]~reg0.ADATA
+B_in[3] => B[3]~reg0.ADATA
+rstN => acc[0]~reg0.ACLR
+rstN => acc[1]~reg0.ACLR
+rstN => acc[2]~reg0.ACLR
+rstN => acc[3]~reg0.ACLR
+rstN => acc[4]~reg0.ACLR
+rstN => acc[5]~reg0.ACLR
+rstN => acc[6]~reg0.ACLR
+rstN => acc[7]~reg0.ACLR
+rstN => B[0]~reg0.ALOAD
+rstN => B[1]~reg0.ALOAD
+rstN => B[2]~reg0.ALOAD
+rstN => B[3]~reg0.ALOAD
+rstN => A[0].LATCH_ENABLE
+rstN => A[1].LATCH_ENABLE
+rstN => A[2].LATCH_ENABLE
+rstN => A[3].LATCH_ENABLE
+rstN => A[4].LATCH_ENABLE
+rstN => A[5].LATCH_ENABLE
+rstN => A[6].LATCH_ENABLE
+rstN => A[7].LATCH_ENABLE
+clk => acc[0]~reg0.CLK
+clk => acc[1]~reg0.CLK
+clk => acc[2]~reg0.CLK
+clk => acc[3]~reg0.CLK
+clk => acc[4]~reg0.CLK
+clk => acc[5]~reg0.CLK
+clk => acc[6]~reg0.CLK
+clk => acc[7]~reg0.CLK
+clk => B[0]~reg0.CLK
+clk => B[1]~reg0.CLK
+clk => B[2]~reg0.CLK
+clk => B[3]~reg0.CLK
+A_shift_amount[0] => ShiftLeft0.IN27
+A_shift_amount[1] => ShiftLeft0.IN26
+A_shift_amount[2] => ShiftLeft0.IN25
+B_shift_amount[0] => ShiftRight0.IN3
+B_shift_amount[1] => ShiftRight0.IN2
+B_shift_amount[2] => ShiftRight0.IN1
+op => Mult0.IN1
+op => Mult0.IN2
+op => Mult0.IN3
+op => Mult0.IN4
+op => Mult0.IN5
+op => Mult0.IN6
+op => Mult0.IN7
+op => Mult0.IN8
+op => Mult0.IN9
+op => Mult0.IN10
+op => Mult0.IN11
+op => Mult0.IN12
+op => Mult0.IN13
+op => Mult0.IN14
+op => Mult0.IN15
+op => Mult0.IN16
+op => Mult0.IN17
+op => Mult0.IN18
+op => Mult0.IN19
+op => Mult0.IN20
+op => Mult0.IN21
+op => Mult0.IN22
+op => Mult0.IN23
+op => Mult0.IN24
+op => Mult0.IN25
+op => Mult0.IN26
+op => Mult0.IN27
+op => Mult0.IN28
+op => Mult0.IN29
+op => Mult0.IN30
+op => Mult0.IN31
+done => acc[0]~reg0.ENA
+done => B[3]~reg0.ENA
+done => B[2]~reg0.ENA
+done => B[1]~reg0.ENA
+done => B[0]~reg0.ENA
+done => acc[7]~reg0.ENA
+done => acc[6]~reg0.ENA
+done => acc[5]~reg0.ENA
+done => acc[4]~reg0.ENA
+done => acc[3]~reg0.ENA
+done => acc[2]~reg0.ENA
+done => acc[1]~reg0.ENA
+acc[0] <= acc[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[1] <= acc[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[2] <= acc[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[3] <= acc[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[4] <= acc[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[5] <= acc[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[6] <= acc[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+acc[7] <= acc[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+B[0] <= B[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= B[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= B[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= B[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

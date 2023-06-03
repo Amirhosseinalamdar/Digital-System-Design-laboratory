@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, E:/AzDSD/5/first_zero.v
+source_file = 1, E:/AzDSD/5/db/first_zero.cbx.xml
+design_name = first_zero
+instance = comp, \index[0]~output\, index[0]~output, first_zero, 1
+instance = comp, \index[1]~output\, index[1]~output, first_zero, 1
+instance = comp, \index[2]~output\, index[2]~output, first_zero, 1
+instance = comp, \in[0]~input\, in[0]~input, first_zero, 1
+instance = comp, \in[2]~input\, in[2]~input, first_zero, 1
+instance = comp, \in[1]~input\, in[1]~input, first_zero, 1
+instance = comp, \index~0\, index~0, first_zero, 1
+instance = comp, \in[3]~input\, in[3]~input, first_zero, 1
+instance = comp, \index~1\, index~1, first_zero, 1
+instance = comp, \index~2\, index~2, first_zero, 1

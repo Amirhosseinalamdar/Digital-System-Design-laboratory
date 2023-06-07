@@ -1,0 +1,543 @@
+Analysis & Synthesis report for AZ8
+Wed May 31 03:12:24 2023
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |pipline
+ 13. Parameter Settings for User Entity Instance: memory:MEM_1
+ 14. Parameter Settings for User Entity Instance: mult:MULT_1
+ 15. Parameter Settings for User Entity Instance: add_sub:ADDSUB_1
+ 16. Port Connectivity Checks: "mult:MULT_1"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed May 31 03:12:24 2023      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; AZ8                                        ;
+; Top-level Entity Name              ; pipline                                    ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 36                                         ;
+;     Total combinational functions  ; 29                                         ;
+;     Dedicated logic registers      ; 21                                         ;
+; Total registers                    ; 21                                         ;
+; Total pins                         ; 12                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; pipline            ; AZ8                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; add_sub.v                        ; yes             ; User Verilog HDL File  ; E:/AzDSD/temp/add_sub.v      ;         ;
+; pipline.v                        ; yes             ; User Verilog HDL File  ; E:/AzDSD/temp/pipline.v      ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File  ; E:/AzDSD/temp/memory.v       ;         ;
+; mult.v                           ; yes             ; User Verilog HDL File  ; E:/AzDSD/temp/mult.v         ;         ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 12               ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 21               ;
+; Total fan-out            ; 165              ;
+; Average fan-out          ; 2.23             ;
++--------------------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
+; |pipline                   ; 29 (27)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 12   ; 0            ; |pipline              ; work         ;
+;    |memory:MEM_1|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |pipline|memory:MEM_1 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; PIPEREG1[0,1]                           ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[2..5]                          ; Stuck at GND due to stuck port data_in ;
+; PIPEREG1[6]                             ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[7..9]                          ; Stuck at GND due to stuck port data_in ;
+; PIPEREG1[10]                            ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[11..19]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREG1[20]                            ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[21]                            ; Stuck at GND due to stuck port data_in ;
+; PIPEREG1[22]                            ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[23..26]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREG1[27]                            ; Stuck at VCC due to stuck port data_in ;
+; PIPEREG1[28,29]                         ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWON1[0,1]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWON1[2]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWON1[3,4]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWON2[0]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWON2[1]                          ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWON2[2]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWON2[3,4]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWOM2[0]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWOM2[1]                          ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWOM2[2]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWOM2[3,4]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWOM1[0,1]                        ; Stuck at GND due to stuck port data_in ;
+; PIPEREGWOM1[2]                          ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGWOM1[3,4]                        ; Stuck at GND due to stuck port data_in ;
+; RegFile[10][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[10][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[10][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[11][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[11][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[11][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[11][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[12][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[12][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[12][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[12][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[13][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[13][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[13][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[13][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[14][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[14][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[14][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[14][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[15][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[15][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[15][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[15][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[16][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[16][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[16][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[16][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[17][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[17][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[17][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[17][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[18][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[18][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[18][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[18][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[19][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[19][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[19][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[19][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[20][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[20][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[20][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[20][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[21][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[21][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[21][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[21][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[22][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[22][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[22][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[22][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[23][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[23][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[23][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[23][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[24][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[24][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[24][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[24][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[25][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[25][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[25][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[25][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[26][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[26][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[26][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[26][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[27][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[27][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[27][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[27][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[28][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[28][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[28][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[28][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[29][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[29][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[29][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[29][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[30][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[30][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[30][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[30][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[31][0]                          ; Merged with RegFile[10][0]             ;
+; RegFile[31][1]                          ; Merged with RegFile[10][0]             ;
+; RegFile[31][2]                          ; Merged with RegFile[10][0]             ;
+; RegFile[31][3]                          ; Merged with RegFile[10][0]             ;
+; RegFile[6][0]                           ; Merged with RegFile[10][0]             ;
+; RegFile[6][1]                           ; Merged with RegFile[10][0]             ;
+; RegFile[6][2]                           ; Merged with RegFile[10][0]             ;
+; RegFile[6][3]                           ; Merged with RegFile[10][0]             ;
+; RegFile[7][0]                           ; Merged with RegFile[10][0]             ;
+; RegFile[7][1]                           ; Merged with RegFile[10][0]             ;
+; RegFile[7][2]                           ; Merged with RegFile[10][0]             ;
+; RegFile[7][3]                           ; Merged with RegFile[10][0]             ;
+; RegFile[8][0]                           ; Merged with RegFile[10][0]             ;
+; RegFile[8][1]                           ; Merged with RegFile[10][0]             ;
+; RegFile[8][2]                           ; Merged with RegFile[10][0]             ;
+; RegFile[8][3]                           ; Merged with RegFile[10][0]             ;
+; RegFile[9][0]                           ; Merged with RegFile[10][0]             ;
+; RegFile[9][1]                           ; Merged with RegFile[10][0]             ;
+; RegFile[9][2]                           ; Merged with RegFile[10][0]             ;
+; RegFile[9][3]                           ; Merged with RegFile[10][0]             ;
+; RegFile[0][2]                           ; Merged with RegFile[0][1]              ;
+; RegFile[0][3]                           ; Merged with RegFile[0][1]              ;
+; RegFile[1][1]                           ; Merged with RegFile[0][1]              ;
+; RegFile[1][2]                           ; Merged with RegFile[0][1]              ;
+; RegFile[1][3]                           ; Merged with RegFile[0][1]              ;
+; RegFile[2][1]                           ; Merged with RegFile[0][1]              ;
+; RegFile[2][2]                           ; Merged with RegFile[0][1]              ;
+; RegFile[2][3]                           ; Merged with RegFile[0][1]              ;
+; RegFile[3][0]                           ; Merged with RegFile[0][1]              ;
+; RegFile[3][2]                           ; Merged with RegFile[0][1]              ;
+; RegFile[3][3]                           ; Merged with RegFile[0][1]              ;
+; RegFile[1][0]                           ; Merged with RegFile[0][0]              ;
+; RegFile[2][0]                           ; Merged with RegFile[0][0]              ;
+; RegFile[3][1]                           ; Merged with RegFile[0][0]              ;
+; PIPEREGO1[2,3]                          ; Merged with PIPEREGO1[1]               ;
+; PIPEREGO2[1..3]                         ; Merged with PIPEREGO1[1]               ;
+; PIPEREGO3[1..3]                         ; Merged with PIPEREGO1[1]               ;
+; PIPEREGO4[0,2,3]                        ; Merged with PIPEREGO1[1]               ;
+; PIPEREGO2[0]                            ; Merged with PIPEREGO1[0]               ;
+; PIPEREGO3[0]                            ; Merged with PIPEREGO1[0]               ;
+; PIPEREGO4[1]                            ; Merged with PIPEREGO1[0]               ;
+; RegFile[0][0]                           ; Stuck at VCC due to stuck port data_in ;
+; RegFile[0][1]                           ; Stuck at GND due to stuck port data_in ;
+; RegFile[10][0]                          ; Stuck at GND due to stuck port data_in ;
+; PIPEREGO1[0]                            ; Stuck at VCC due to stuck port data_in ;
+; PIPEREGO1[1]                            ; Stuck at GND due to stuck port data_in ;
+; ALUREGI[0]                              ; Stuck at VCC due to stuck port data_in ;
+; RegFile[5][0]                           ; Stuck at VCC due to stuck port data_in ;
+; RegFile[4][2]                           ; Merged with RegFile[4][0]              ;
+; RegFile[4][3]                           ; Merged with RegFile[4][0]              ;
+; RegFile[5][3]                           ; Merged with RegFile[5][2]              ;
+; ALUREGR[2,3]                            ; Merged with ALUREGR[0]                 ;
+; ALUREGI[3]                              ; Merged with ALUREGI[2]                 ;
+; Total Number of Removed Registers = 194 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                       ;
++---------------+---------------------------+-------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                ;
++---------------+---------------------------+-------------------------------------------------------+
+; PIPEREG1[15]  ; Stuck at GND              ; PIPEREGO1[0], PIPEREGO1[1], ALUREGI[0], RegFile[5][0] ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[20]  ; Stuck at VCC              ; PIPEREGWON2[0], PIPEREGWOM2[0]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[21]  ; Stuck at GND              ; PIPEREGWON2[1], PIPEREGWOM2[1]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[22]  ; Stuck at VCC              ; PIPEREGWON2[2], PIPEREGWOM2[2]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[23]  ; Stuck at GND              ; PIPEREGWON2[3], PIPEREGWOM2[3]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[24]  ; Stuck at GND              ; PIPEREGWON2[4], PIPEREGWOM2[4]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[25]  ; Stuck at GND              ; PIPEREGWON1[0], PIPEREGWOM1[0]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[26]  ; Stuck at GND              ; PIPEREGWON1[1], PIPEREGWOM1[1]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[27]  ; Stuck at VCC              ; PIPEREGWON1[2], PIPEREGWOM1[2]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[28]  ; Stuck at GND              ; PIPEREGWON1[3], PIPEREGWOM1[3]                        ;
+;               ; due to stuck port data_in ;                                                       ;
+; PIPEREG1[29]  ; Stuck at GND              ; PIPEREGWON1[4], PIPEREGWOM1[4]                        ;
+;               ; due to stuck port data_in ;                                                       ;
++---------------+---------------------------+-------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |pipline|pc[0]             ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 15 LEs               ; 48 LEs                 ; No         ; |pipline|Mux2              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |pipline ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; LogRFsize      ; 5     ; Signed Integer                                 ;
+; RegLength      ; 4     ; Signed Integer                                 ;
+; RFsize         ; 32    ; Signed Integer                                 ;
+; wordLength     ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory:MEM_1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; m              ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mult:MULT_1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; n              ; 4     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_sub:ADDSUB_1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mult:MULT_1"                                                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Rout ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "Rout[7..4]" have no fanouts ;
+; Iout ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "Iout[7..4]" have no fanouts ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed May 31 03:12:23 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AZ8 -c AZ8
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file add_sub.v
+    Info (12023): Found entity 1: add_sub
+Info (12021): Found 1 design units, including 1 entities, in source file pipline.v
+    Info (12023): Found entity 1: pipline
+Info (12021): Found 1 design units, including 1 entities, in source file memory.v
+    Info (12023): Found entity 1: memory
+Info (12021): Found 1 design units, including 1 entities, in source file mult.v
+    Info (12023): Found entity 1: mult
+Info (12021): Found 1 design units, including 1 entities, in source file pipline_ts.v
+    Info (12023): Found entity 1: pipline_ts
+Info (12021): Found 0 design units, including 0 entities, in source file initialize.v
+Warning (10236): Verilog HDL Implicit Net warning at pipline_ts.v(6): created implicit net for "out"
+Info (12127): Elaborating entity "pipline" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at pipline.v(65): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "memory" for hierarchy "memory:MEM_1"
+Info (12128): Elaborating entity "mult" for hierarchy "mult:MULT_1"
+Info (12128): Elaborating entity "add_sub" for hierarchy "add_sub:ADDSUB_1"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file E:/AzDSD/temp/output_files/AZ8.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 38 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4667 megabytes
+    Info: Processing ended: Wed May 31 03:12:24 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/AzDSD/temp/output_files/AZ8.map.smsg.
+
+

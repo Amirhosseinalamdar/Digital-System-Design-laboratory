@@ -1,0 +1,43 @@
+# do AZ8.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pipline
+# 
+# Top level modules:
+# 	pipline
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pipline_vlg_sample_tst
+# -- Compiling module pipline_vlg_check_tst
+# -- Compiling module pipline_vlg_vec_tst
+# 
+# Top level modules:
+# 	pipline_vlg_vec_tst
+# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.pipline_vlg_vec_tst 
+# Loading work.pipline_vlg_vec_tst
+# Loading work.pipline
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# Loading cycloneiv_ver.cycloneiv_clkctrl
+# Loading cycloneiv_ver.cycloneiv_mux41
+# Loading cycloneiv_ver.cycloneiv_ena_reg
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.pipline_vlg_sample_tst
+# Loading work.pipline_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port OUT[1] :: @time = 240000.000 ps
+#      Expected value = 0000
+#      Real value = 0010
+# ERROR! Vector Mismatch for output port OUT[0] :: @time = 280000.000 ps
+#      Expected value = 0000
+#      Real value = 1111
+# ERROR! Vector Mismatch for output port OUT[2] :: @time = 280000.000 ps
+#      Expected value = 0000
+#      Real value = 1111
+# ERROR! Vector Mismatch for output port OUT[3] :: @time = 280000.000 ps
+#      Expected value = 0000
+#      Real value = 1111
+#           4 mismatched vectors : Simulation failed !
+# ** Note: $finish    : Waveform.vwf.vt(215)
+#    Time: 1 us  Iteration: 0  Instance: /pipline_vlg_vec_tst/tb_out
